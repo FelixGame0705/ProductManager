@@ -28,9 +28,9 @@ public class StoreManager {
     static CollectorProductList collectorProductList = new CollectorProductList();
 
     public static void main(String[] args) {
-        if(plist!=null)
         plist = (ProductList) OutInData.Instance().LoadData(plist, "D:\\product.dat");
         collectorProductList = (CollectorProductList) OutInData.Instance().LoadData(collectorProductList, "D:\\warehouse.dat");
+        if(plist!=null)
         ProductsController.Instance().setProductList((ProductList) plist);
         if(collectorProductList!=null)
         WarehouseController.Instance().setCollectorProductList((CollectorProductList) OutInData.Instance().LoadData(WarehouseController.Instance().geCollectorProductList(), "D:\\warehouse.dat"));
