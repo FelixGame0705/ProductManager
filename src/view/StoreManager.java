@@ -56,6 +56,7 @@ public class StoreManager {
                 break;
             case 2:
                 reportMenu();
+                mainMenu();
                 break;
         }
     }
@@ -124,7 +125,7 @@ public class StoreManager {
                 WarehouseController.Instance().geCollectorProductList().showAll();
                 break;
             case 4:
-                OutInData.Instance().SaveData(plist, "D:\\product.dat");
+                OutInData.Instance().SaveData(ProductsController.Instance().getProductList(), "D:\\product.dat");
                 OutInData.Instance().SaveData(WarehouseController.Instance().geCollectorProductList(), "D:\\warehouse.dat");
                 break;
         }
