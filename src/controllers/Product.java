@@ -5,13 +5,14 @@
  */
 package controllers;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author DELL
  */
-public class Product {
+public class Product implements Serializable{
     private String productCode;
     private String productName;
     //private String manuFacturingDate;

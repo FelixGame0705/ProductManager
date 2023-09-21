@@ -5,11 +5,13 @@
  */
 package controllers;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DELL
  */
-public class CollectorProduct {
+public class CollectorProduct implements Serializable{
     private Product product;
     private String manuFacturingDate;
     private String expirationDate;

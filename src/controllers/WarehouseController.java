@@ -13,15 +13,25 @@ import utils.Utils;
  *
  * @author DELL
  */
-public class WarehouseManager {
-    static Warehouse warehouse = new Warehouse();
-    static CollectorProductList warehouseProductList = new CollectorProductList();
-    private void SetWarehouse()
-    {
+public class WarehouseController {
+    
+    private WarehouseController(){}
+    private static WarehouseController instance;
+    public static WarehouseController Instance(){
+        if(instance!= null) return instance;
+        else instance = new WarehouseController();
+        return  instance;
     }
     
-    public static CollectorProductList getWarehouseProductList(){
-        return  warehouseProductList;
+    Warehouse warehouse = new Warehouse();
+    CollectorProductList collectorProductList = new CollectorProductList();
+    
+    public CollectorProductList geCollectorProductList(){
+        return  collectorProductList;
+    }
+    
+    public void setCollectorProductList(CollectorProductList collectorProductList){
+        this.collectorProductList = collectorProductList;
     }
     
     public void addReceipt(Receipt receipt){
@@ -44,17 +54,14 @@ public class WarehouseManager {
         Receipt receipt = new Receipt();
         addReceipt(receipt);
         receipt.setTypeReceipt(TYPE_RECEIPT.EXPORT);
-        addCollectorProduct(receipt);
+        collectorProductList.minus(Utils.getString(), 0);
         warehouse.addReceipt(receipt);
         warehouse.setUpdateDate(receipt.getTimeUpdate());
     }
     
     public void addCollectorProduct(Receipt receipt){
-        warehouseProductList.add();
-        receipt.setCollectorProductList(warehouseProductList);
-    }
-    
-    public Warehouse getWarehouse(){
-        return warehouse;
+        collectorProductList.add();
+        receipt.setCollectorProductList(collectorProductList);
+        
     }
 }

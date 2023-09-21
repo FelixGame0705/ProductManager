@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ import utils.Utils;
  *
  * @author DELL
  */
-public class ProductList extends ArrayList<Product> implements IList{
+public class ProductList extends ArrayList<Product> implements IList, Serializable{
 
     @Override
     public void add() {
@@ -23,10 +24,6 @@ public class ProductList extends ArrayList<Product> implements IList{
         product.setProductCode(Utils.getString());
         System.out.println("Product name: ");
         product.setProductName(Utils.getString());
-        System.out.println("Manufacturing date: ");
-//        product.setManuFacturingDate(Utils.validateDate());
-        System.out.println("Expiration date: ");
-//        product.setExpirationDate(Utils.validateDate());
         System.out.println("Price: ");
         product.setPrice(Utils.getInt("", 0, 499999999));
         this.add(product);
