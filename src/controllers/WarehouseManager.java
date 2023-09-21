@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package storeManagement;
+package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,13 @@ import utils.Utils;
  */
 public class WarehouseManager {
     static Warehouse warehouse = new Warehouse();
+    static CollectorProductList warehouseProductList = new CollectorProductList();
     private void SetWarehouse()
     {
+    }
+    
+    public static CollectorProductList getWarehouseProductList(){
+        return  warehouseProductList;
     }
     
     public void addReceipt(Receipt receipt){
@@ -45,7 +50,6 @@ public class WarehouseManager {
     }
     
     public void addCollectorProduct(Receipt receipt){
-        CollectorProductList warehouseProductList = new CollectorProductList();
         warehouseProductList.add();
         receipt.setCollectorProductList(warehouseProductList);
     }

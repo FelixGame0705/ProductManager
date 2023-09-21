@@ -98,6 +98,7 @@ public class Utils {
         String s = "";
         Scanner sc = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.US);
+        s = sc.nextLine();
         while (!s.matches(patternDate)) {
             System.out.print("Nhap lai: ");
             s = sc.nextLine();

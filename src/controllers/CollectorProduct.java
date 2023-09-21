@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package storeManagement;
+package controllers;
 
 /**
  *
@@ -11,8 +11,26 @@ package storeManagement;
  */
 public class CollectorProduct {
     private Product product;
+    private String manuFacturingDate;
+    private String expirationDate;
     private int quantity;
 
+    public String getManuFacturingDate() {
+        return manuFacturingDate;
+    }
+
+    public void setManuFacturingDate(String manuFacturingDate) {
+        this.manuFacturingDate = manuFacturingDate;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+    
     public CollectorProduct(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;

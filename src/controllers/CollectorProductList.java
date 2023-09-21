@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package storeManagement;
+package controllers;
 
 import java.util.ArrayList;
 import utils.Utils;
@@ -20,14 +20,18 @@ public class CollectorProductList extends ArrayList<CollectorProduct> {
         product.setProductCode(Utils.getString());
         System.out.println("Product name: ");
         product.setProductName(Utils.getString());
-        System.out.println("Manufacturing date: ");
-        product.setManuFacturingDate(Utils.validateDate());
-        System.out.println("Expiration date: ");
-        product.setExpirationDate(Utils.validateDate());
+//        System.out.println("Manufacturing date: ");
+//        product.setManuFacturingDate(Utils.validateDate());
+//        System.out.println("Expiration date: ");
+//        product.setExpirationDate(Utils.validateDate());
         System.out.println("Price: ");
         product.setPrice(Utils.getInt("", 0, 499999999));
         collectorProduct.setProduct(product);
         System.out.println("Quantity: ");
         collectorProduct.setQuantity(Utils.getInt("", 1, 499999999));
+    }
+    
+    public CollectorProductList getCollectorProductList(){
+        return this;
     }
 }

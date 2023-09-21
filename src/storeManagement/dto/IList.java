@@ -6,7 +6,7 @@
 package storeManagement.dto;
 
 import java.util.List;
-import storeManagement.Product;
+import controllers.Product;
 
 /**
  *
@@ -18,4 +18,5 @@ public interface IList {
     public Object find(String code);
     public void delete();
     public void show(String code);
+    public void showAll();
 }
